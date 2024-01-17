@@ -1,17 +1,20 @@
+#кодировка utf8 для корректного отображение кирилических символов
 #Encoding: utf-8
 
-require 'rspec'
+require 'rspec' #подключение гема rspec для написания тестов
 
-require_relative 'task_1.rb'
+require_relative 'task_1.rb' # подключения файла с тестируемым методом
 
-describe 'Greeting' do
+describe 'Greet' do #блок тестов класса Greet
 
-    it 'Should greet proparly' do
-        expect(Greeting.greet('Олег','Ковалев',17)) .to eq ('Привет, Олег Ковалев. Тебе меньше 18лет, но начать учиться программировать никогда не рано')
+    #метод должен правильно приветствовать пользователя младше 18 лет
+    it 'Should greet properly' do
+        expect(Greet.greeting('Олег','Ковалев',17)) .to eq ('Привет, Олег Ковалев. Тебе меньше 18лет, но начать учиться программировать никогда не рано') #ожидание возвращение правильного приветствия метода greeting класса Greet
     end
 
-    it 'Should greet proparly' do
-        expect(Greeting.greet('Райан','Гослинг',43)) .to eq ('Привет, Райан Гослинг. Самое время заняться делом!')
+    #метод должен правильно приветствовать пользователя 18 лет или старше
+    it 'Should greet properly' do
+        expect(Greet.greeting('Райан','Гослинг',43)) .to eq ('Привет, Райан Гослинг. Самое время заняться делом!')#ожидание возвращение правильного приветствия метода greeting класса Greet
     end
 
 end
