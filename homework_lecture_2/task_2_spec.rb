@@ -1,19 +1,20 @@
-require 'rspec' #подключение гема rspec для написания тестов
+require 'rspec'
 
-require_relative 'task_2.rb' # подключения файла с тестируемым методом
+require_relative 'task_2.rb'
 
-describe 'Numbers' do #блок тестов класса Numbers
-
-    it 'Should output proper number' do # метод должен выводить правильное число
-        expect(Numbers.foobar(20,42)).to eq (42) # при вводе 20 и 42, ожидается что функция вернет 42 
+describe 'foobar' do 
+    # если хотя бы одно число 20, то метод должен возвращать второе число
+    it 'Should output proper number' do
+        expect(foobar(20,42)).to eq (42)
     end
 
     it 'Should output proper number' do
-        expect(Numbers.foobar(42,20)).to eq (20) # при вводе 42 и 20, ожидается что функция вернет 20
+        expect(foobar(42,20)).to eq (20)
     end
 
+    # в противном случае метод вернет сумму обоих чисел
     it 'Should output proper number' do
-        expect(Numbers.foobar(1,1)).to eq (2) # при вводе 1 и 1, ожидается что функция вернет 2
+        expect(foobar(3,3)).to eq (6)
     end
 
 end
